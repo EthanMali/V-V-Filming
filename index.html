@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>V&V Filming</title>
     <meta name="description" content="V&V Filming provides professional filming services for weddings, events, and custom projects. Capture your special moments with elegance.">
-    <!-- Link to the favicon -->
-    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="Main style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>V&V Filming</h1>
             <nav>
-                <div class="hamburger">
+                <div class="hamburger" id="hamburger">
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div class="dropdown">
+                <div class="dropdown" id="dropdown">
                     <a href="#home">Home</a>
-                    <a href="#services">Services</a>
-                    <a href="#about">About Us</a>
-                    <a href="#contact">Contact</a>
+                    <a href="service.html">Services</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="upload.html">Our Work</a>
                 </div>
             </nav>
-            
         </div>
     </header>
 
@@ -34,8 +34,8 @@
     <section id="hero">
         <div class="hero-content">
             <h2>Capture Your Moments</h2>
-            <p>Professional filming for weddings, events, and custom projects. Let's make your memories unforgettable.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <p>Transforming memories into cinematic experiences. Whether it's a wedding, an event, or a unique project, we’ve got you covered!</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
@@ -43,66 +43,51 @@
     <section id="home">
         <div class="container">
             <h2>Welcome to V&V Filming</h2>
-            <p>We offer a premium solution for capturing your special moments through high-quality video production. Our team is dedicated to preserving the essence of your events with elegance and style.</p>
+            <p>At V&V Filming, we believe every moment matters. Our premium video production services ensure that each special occasion is captured with the highest quality and creativity.</p>
+            <p>Join us on a journey where we transform your events into stunning visual stories that resonate for years to come.</p>
         </div>
     </section>
 
     <!-- Services Section -->
-<!-- Services Section -->
-<section id="services">
-    <div class="container">
-        <h2>Our Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3><i class="fas fa-ring"></i> Wedding Filming</h3>
-                <p>Elegant coverage of your special day, from the ceremony to the reception.</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-            <div class="service-card">
-                <h3>Event Filming</h3>
-                <p>Professional filming for corporate functions, private parties, and more.</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-            <div class="service-card">
-                <h3>Custom Projects</h3>
-                <p>Tailored filming services for unique projects, including promotional videos.</p>
-                <a href="#" class="cta-button">Learn More</a>
-            </div>
-            <div class="service-card">
-                <h3>Live Streaming</h3>
-                <p>Real-time streaming services for events, ensuring everyone can participate.</p>
-                <a href="#" class="cta-button">Learn More</a>
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-ring"></i></div>
+                    <h3>Wedding Filming</h3>
+                    <p>Comprehensive coverage of your special day, from vows to celebrations, ensuring every moment is beautifully documented.</p>
+                    <a href="service.html" class="cta-button">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>Event Filming</h3>
+                    <p>Expert filming for corporate events, parties, and gatherings, capturing every significant moment with finesse.</p>
+                    <a href="service.html" class="cta-button">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-video"></i></div>
+                    <h3>Custom Projects</h3>
+                    <p>Tailored solutions for unique filming needs, from promotional videos to artistic documentaries, crafted just for you.</p>
+                    <a href="service.html" class="cta-button">Learn More</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-broadcast-tower"></i></div>
+                    <h3>Live Streaming</h3>
+                    <p>Seamless live streaming services for your events, making sure everyone can join in, no matter where they are.</p>
+                    <a href="service.html" class="cta-button">Learn More</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- About Us Section -->
     <section id="about">
         <div class="container">
             <h2>About Us</h2>
-            <p>At V&V Filming, we are passionate about capturing the most important moments in life. Our team brings years of experience and a commitment to excellence, using the latest technology to deliver exceptional results.</p>
-            <p>We pride ourselves on our attention to detail and strive to exceed your expectations. From the initial consultation to the final delivery, our goal is to create memorable films that truly reflect your special moments.</p>
-            <p>Let us help you tell your story through the art of filmmaking. Whether you're planning a wedding, hosting an event, or working on a unique project, we're here to capture every moment with creativity and care.</p>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form id="contact-form" action="server.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit" class="cta-button">Send</button>
-            </form>
+            <p>At V&V Filming, we are passionate about capturing life's most significant moments. With years of experience and state-of-the-art technology, our dedicated team is committed to delivering exceptional results.</p>
+            <p>From your first consultation to the final cut, we pride ourselves on our attention to detail and customer satisfaction. Let us help you tell your unique story through the lens of creativity and professionalism.</p>
+            <p>Whether it's a heartfelt wedding or a dynamic corporate event, we strive to exceed your expectations and deliver unforgettable films that you will cherish forever.</p>
         </div>
     </section>
 
@@ -110,9 +95,23 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 V&V Filming. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </footer>
 
     <script src="server.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const dropdown = document.getElementById('dropdown');
+
+        hamburger.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
