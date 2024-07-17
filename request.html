@@ -62,7 +62,7 @@
     </header>
 
     <section>
-        <form id="requestForm">
+        <form id="requestForm" action="https://formspree.io/f/xyzgzvzv" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="text" name="phone" placeholder="Your Phone Number" required>
@@ -89,11 +89,16 @@
     document.getElementById('requestForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Prevent default form submission
 
-        const formData = new FormData(this); // Create FormData object
+        const form = event.target;
+        const data = new FormData(form);
+        const action = form.action;
 
-        fetch('submit_form.php', {
+        fetch(action, {
             method: 'POST',
-            body: formData
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
         })
         .then(response => {
             if (!response.ok) {
@@ -104,7 +109,7 @@
         .then(data => {
             document.getElementById('responseMessage').innerHTML = data.message; // Display the response
             if (data.success) {
-                this.reset(); // Reset the form
+                form.reset(); // Reset the form
             }
         })
         .catch(error => {
