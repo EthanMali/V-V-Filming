@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V&V Filming</title>
+    <meta name="description" content="V&V Filming provides professional filming services for weddings, events, and custom projects. Capture your special moments with elegance.">
+    <!-- Link to the favicon -->
+    <link rel="icon" href="favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Main style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>V&V Filming</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Capture Your Moments</h2>
+            <p>Professional filming for weddings, events, and custom projects. Let's make your memories unforgettable.</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to V&V Filming</h2>
+            <p>We offer a premium solution for capturing your special moments through high-quality video production. Our team is dedicated to preserving the essence of your events with elegance and style.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-card">
+                <h3>Wedding Filming</h3>
+                <p>Elegant and comprehensive coverage of your special day, from the ceremony to the reception. We capture every moment with the highest quality.</p>
+            </div>
+            <div class="service-card">
+                <h3>Event Filming</h3>
+                <p>Professional filming for all types of events, including corporate functions, private parties, and more. We ensure every significant moment is captured beautifully.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Projects</h3>
+                <p>Tailored filming services for unique projects, including promotional videos, documentaries, and special messages. We work with you to bring your vision to life.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At V&V Filming, we are passionate about capturing the most important moments in life. Our team brings years of experience and a commitment to excellence, using the latest technology to deliver exceptional results.</p>
+            <p>We pride ourselves on our attention to detail and strive to exceed your expectations. From the initial consultation to the final delivery, our goal is to create memorable films that truly reflect your special moments.</p>
+            <p>Let us help you tell your story through the art of filmmaking. Whether you're planning a wedding, hosting an event, or working on a unique project, we're here to capture every moment with creativity and care.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form" action="server.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit" class="cta-button">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 V&V Filming. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="server.js"></script>
+</body>
+</html>
