@@ -78,7 +78,7 @@
             <button type="submit">Submit Request</button>
         </form>
 
-        <div id="responseMessage" style="margin-top: 20px;">Thankyou, We'll reachout to you shortly</div>
+        <div id="responseMessage" style="margin-top: 20px;"></div>
     </section>
 
     <footer>
@@ -92,6 +92,7 @@
         const form = event.target;
         const data = new FormData(form);
         const action = form.action;
+        const responseMessage = "Thankyou for reaching out to us, We'll be intouch soon."
 
         fetch(action, {
             method: 'POST',
