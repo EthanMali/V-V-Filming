@@ -46,6 +46,7 @@
 
                 <button type="submit" class="cta-button">Send</button>
             </form>
+            <div id="responseMessage" style="margin-top: 20px;"></div>
         </div>
     </section>
 
@@ -61,12 +62,36 @@
     </footer>
 
     <script>
-        // Hamburger menu toggle
-        const hamburger = document.getElementById('hamburger');
-        const dropdown = document.getElementById('dropdown');
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
 
-        hamburger.addEventListener('click', () => {
-            dropdown.classList.toggle('show');
+            const form = event.target;
+            const data = new FormData(form);
+            const action = form.action;
+
+            fetch(action, {
+                method: 'POST',
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json(); // Assuming the response is JSON
+            })
+            .then(data => {
+                document.getElementById('responseMessage').innerHTML = "Thank you for reaching out to us. We'll be in touch soon."; // Display the response
+                if (data.success) {
+                    form.reset(); // Reset the form
+                }
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+                document.getElementById('responseMessage').innerHTML = 'There was an error submitting your request. Please try again later.';
+            });
         });
     </script>
 </body>
