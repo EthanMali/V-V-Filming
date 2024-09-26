@@ -1,0 +1,268 @@
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Condensed', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* ------------------------------------------------------------------ Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*------------------------------------------------------------------------------ Header */
+header {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 15px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* ------------------------------------------------------- Navigation Styles */
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #000000; /* Change to black */
+    text-decoration: solid;
+    font-weight: bold;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* --------------------------------------------- Dropdown Menu Styles */
+.dropdown {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%; /* Use full width of the parent */
+    top: 35px;
+    left: 0; /* Align to the left */
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+.dropdown.show {
+    display: flex;
+    background: #ffffff; /* White background when shown */
+}
+
+/* Centering the dropdown links */
+.dropdown a {
+    color: #000; /* Set link color to black */
+    text-align: center; /* Center text */
+    padding: 10px; /* Add padding for clickable area */
+    width: 100%; /* Make the link take full width */
+    text-decoration: none;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    .dropdown {
+        width: 80%; /* Adjusted width for mobile */
+        left: 10%; /* Center dropdown */
+    }
+    .nav-links {
+        display: none; /* Hide nav links on mobile */
+    }
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .dropdown {
+        display: none;
+    }
+    .nav-links {
+        display:contents;/* Hide nav links on mobile */
+    }
+    .hamburger {
+        display: none; /* Show hamburger on mobile */
+    }
+}
+
+
+/*---------------------------------------------------- Hamburger Menu */
+.hamburger {
+    display: none;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #333;
+    margin: 5px;
+    transition: background 0.3s;
+}
+
+.logo {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+.logo {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 30px;
+}
+
+
+/*------------------------------------------------------------------------------- Hero Section */
+#hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    background-image: url('../src/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+}
+
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------------------------------ Contact Section */
+#contact {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact label {
+    margin-bottom: 5px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    border: none;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+}
+
+/*-------------------------------------------------------------------------- Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .socials {
+    margin-top: 10px;
+}
+
+footer .socials a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer .socials a:hover {
+    color: #000000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .dropdown {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background: #333;
+        width: 30%;
+        top: 60px;
+        left: 400px;
+        z-index: 10000;
+        padding: 15px;
+    }
+
+    .dropdown.show {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
