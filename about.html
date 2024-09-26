@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | V&V Filming</title>
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/about-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">V&V Filming</a>
+            <nav>
+                <div class="hamburger" id="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <a href="index.html">Home</a>
+                    <a href="service.html">Services</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="service.html">Services</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+            
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div>
+            <h2 style="font-size: 50px;">Who We Are</h2>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="bg-pattern"></div>
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At V&V Filming, we are passionate about capturing the most important moments in life.</p>
+                    <p>With years of experience and a commitment to excellence, our team utilizes the latest technology to create stunning visuals.</p>
+                    <p>Whether it's a wedding, corporate event, or a creative project, we bring your vision to life with artistry and dedication.</p>
+                </div>
+                <img class="image" src="src/team.jpg" alt="About Us Image">
+            </div>
+
+            <div class="team-section">
+                <div class="team-member">
+                    <img src="src/vasya.jpg" alt="Team Member 1">
+                    <h3>Vasya Zavalin</h3>
+                    <p>Director & Cinematographer</p>
+                </div>
+                <div class="team-member">
+                    <img src="src/vlad.jpg" alt="Team Member 2">
+                    <h3>Vlad Zavalin</h3>
+                    <p>Videographer</p>
+                </div>
+                <div class="team-member">
+                    <img src="team3.jpg" alt="Team Member 3">
+                    <h3>Ethan Malimon</h3>
+                    <p>Editor & Webmaster</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 V&V Filming. All rights reserved.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const dropdown = document.getElementById('dropdown');
+        
+        // Show dropdown on hamburger click
+        hamburger.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+        
+        // Close dropdown on click outside (optional)
+        document.addEventListener('click', (event) => {
+            if (!hamburger.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>

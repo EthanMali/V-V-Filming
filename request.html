@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Service - V&V Filming</title>
+    <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/Main style.css">
+    <style>
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Request a Service</h1>
+    </header>
+
+    <section>
+        <form id="requestForm" action="https://formspree.io/f/xyzgzvzv" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Your Phone Number" required>
+            <select name="service" required>
+                <option value="">Select a Service</option>
+                <option value="Wedding Filming">Wedding Filming</option>
+                <option value="Corporate Videos">Corporate Videos</option>
+                <option value="Event Coverage">Event Coverage</option>
+                <option value="Promotional Videos">Promotional Videos</option>
+                <option value="Custom Projects">Custom Projects</option>
+            </select>
+            <textarea name="details" placeholder="Additional Details"></textarea>
+            <button type="submit">Submit Request</button>
+        </form>
+
+        <div id="responseMessage" style="margin-top: 20px;"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 V&V Filming. All rights reserved.</p>
+    </footer>
+
+    <script>
+    document.getElementById('requestForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = event.target;
+        const data = new FormData(form);
+        const action = form.action;
+
+        fetch(action, {
+            method: 'POST',
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+            return response.json(); // Assuming the response is JSON
+        })
+        .then(data => {
+            document.getElementById('responseMessage').innerHTML = "Thank you for reaching out to us. We'll be in touch soon."; // Display the response
+            if (data.success) {
+                form.reset(); // Reset the form
+            }
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+            document.getElementById('responseMessage').innerHTML = 'There was an error submitting your request. Please try again later.';
+        });
+    });
+    </script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const dropdown = document.getElementById('dropdown');
+
+        hamburger.addEventListener('click', () => {
+            dropdown.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>
